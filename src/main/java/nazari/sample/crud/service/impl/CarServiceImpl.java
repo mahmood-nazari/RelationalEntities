@@ -15,7 +15,7 @@ public class CarServiceImpl implements ICarService {
 
     @Override
     @Transactional
-    public Car save(Car car) {
+    public Car saveOrUpdate(Car car) {
         return iCarDao.save(car);
     }
 

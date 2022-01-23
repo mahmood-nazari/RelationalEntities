@@ -4,7 +4,7 @@ import nazari.sample.crud.model.Car;
 
 public interface ICarService {
 
-    Car save(Car car);
+    Car saveOrUpdate(Car car);
 
     Car getById(Long id);
 

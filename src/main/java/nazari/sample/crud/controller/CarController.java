@@ -14,7 +14,7 @@ public class CarController {
 
     @PostMapping("save-or-update")
     public Car saveOrUpdate(@RequestBody Car car) {
-        return iCarService.save(car);
+        return iCarService.saveOrUpdate(car);
     }
 
     @GetMapping("get-by-id/{id}")

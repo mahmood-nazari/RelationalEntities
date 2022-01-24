@@ -1,14 +1,17 @@
 package nazari.sample.crud.service;
 
 import nazari.sample.crud.model.datamodel.Car;
+import nazari.sample.crud.model.dto.CarDTO;
+
+import java.util.List;
 
 public interface ICarService {
 
-    Car saveOrUpdate(Car car);
+    Car saveOrUpdate(CarDTO carDTO);
 
-    Car getById(Long id);
+    CarDTO getById(Long id);
 
-    Iterable<Car> getAllCar();
+    List<CarDTO> getAllCar();
 
     void deleteById(Long id);
 }

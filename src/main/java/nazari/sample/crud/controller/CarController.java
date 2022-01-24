@@ -1,9 +1,12 @@
 package nazari.sample.crud.controller;
 
 import nazari.sample.crud.model.datamodel.Car;
+import nazari.sample.crud.model.dto.CarDTO;
 import nazari.sample.crud.service.ICarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("car")
@@ -13,17 +16,17 @@ public class CarController {
     private ICarService iCarService;
 
     @PostMapping("save-or-update")
-    public Car saveOrUpdate(@RequestBody Car car) {
-        return iCarService.saveOrUpdate(car);
+    public Car saveOrUpdate(@RequestBody CarDTO carDTO) {
+        return iCarService.saveOrUpdate(carDTO);
     }
 
     @GetMapping("get-by-id/{id}")
-    public Car getById(@PathVariable Long id) {
+    public CarDTO getById(@PathVariable Long id) {
         return iCarService.getById(id);
     }
 
     @GetMapping("get-all")
-    public Iterable<Car> getAll() {
+    public List<CarDTO> getAll() {
         return iCarService.getAllCar();
     }
 

@@ -2,6 +2,7 @@ package nazari.sample.crud.service;
 
 import nazari.sample.crud.model.datamodel.Person;
 import nazari.sample.crud.model.dto.PersonDTO;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

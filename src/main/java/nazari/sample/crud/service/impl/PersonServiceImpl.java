@@ -23,15 +23,21 @@ public class PersonServiceImpl implements IPersonService {
     @Transactional
     public Person saveOrUpdate(PersonDTO personDTO) {
         Person person = IPersonMapper.INSTANCE.personDTOToPerson(personDTO);
-        /*
-         * when try to save a person without car, because of mapping null carId map to car.id and it will save to Database with null values except id
-         * this line make car object null to prevent save it
-         * */
-        validationForPreventSaveCarBecauseMapping(person);
+        validationForPreventSaveCarBecauseMappingInPersonSave(person);
+        validationForSetCarNameInPersonObjectWhenCarSaveInPerson(person, personDTO);
         return iPersonDao.save(person);
     }
 
-    private void validationForPreventSaveCarBecauseMapping(Person person) {
+    private void validationForSetCarNameInPersonObjectWhenCarSaveInPerson(Person person, PersonDTO personDTO) {
+        if (person.getCar() != null && person.getId() != null)
+            person.getCar().setCarName(personDTO.getCarName());
+    }
+
+    /*
+     * when try to save a person without car, because of mapping null carId map to car.id and it will save to Database with null values except id
+     * this line make car object null to prevent save it
+     * */
+    private void validationForPreventSaveCarBecauseMappingInPersonSave(Person person) {
         if (person.getCar().getId() == null)
             person.setCar(null);
     }

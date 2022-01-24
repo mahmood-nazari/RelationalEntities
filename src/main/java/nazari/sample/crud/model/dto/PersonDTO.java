@@ -6,7 +6,15 @@ public class PersonDTO {
     private String name;
     private String lastname;
     private Long carId;
+    private String carName;
 
+    public String getCarName() {
+        return carName;
+    }
+
+    public void setCarName(String carName) {
+        this.carName = carName;
+    }
 
     public String getLastname() {
         return lastname;

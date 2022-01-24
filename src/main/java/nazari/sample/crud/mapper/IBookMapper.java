@@ -14,24 +14,24 @@ import java.util.List;
 public interface IBookMapper {
     IBookMapper INSTANCE = Mappers.getMapper(IBookMapper.class);
 
-    @Mapping(source = "id", target = "id")
-    @Mapping(source = "bookName", target = "bookName")
-    @Mapping(source = "", target = "customerBookId")
+//    @Mapping(source = "id", target = "id")
+//    @Mapping(source = "bookName", target = "bookName")
+//    @Mapping(source = "", target = "customerBookId")
     BookDTO bookToBookDTO(Book book);
 
-    @Mapping(source = "id", target = "id")
-    @Mapping(source = "bookName", target = "bookName")
-    @Mapping(source = "customerBookId", target = "customerBooks")
+//    @Mapping(source = "id", target = "id")
+//    @Mapping(source = "bookName", target = "bookName")
+//    @Mapping(source = "customerBookId", target = "customerBooks")
     Book bookDTOToBook(BookDTO bookDTO);
 
-    @Mapping(source = "id", target = "id")
-    @Mapping(source = "bookName", target = "bookName")
-    @Mapping(source = "customerBooks", target = "customerBookId")
+//    @Mapping(source = "id", target = "id")
+//    @Mapping(source = "bookName", target = "bookName")
+//    @Mapping(source = "customerBooks", target = "customerBookId")
     List<BookDTO> bookToBookDTO(List<Book> books);
 
-    @Mapping(source = "id", target = "id")
-    @Mapping(source = "bookName", target = "bookName")
-    @Mapping(source = "customerBookId", target = "customerBooks")
+//    @Mapping(source = "id", target = "id")
+//    @Mapping(source = "bookName", target = "bookName")
+//    @Mapping(source = "customerBookId", target = "customerBooks")
     List<Book> bookDTOToBook(List<BookDTO> bookDTOS);
 
 }

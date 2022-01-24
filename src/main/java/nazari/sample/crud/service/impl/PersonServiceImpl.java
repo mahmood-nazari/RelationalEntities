@@ -21,6 +21,11 @@ public class PersonServiceImpl implements IPersonService {
     @Override
     public Person saveOrUpdate(PersonDTO personDTO) {
         Person person = IPersonMapper.INSTANCE.personDTOToPerson(personDTO);
+        /*
+         * when try to save a person without car, because of mapping null carId map to car.id and it will save to Database with null values except id
+         * this line make car object null to prevent save it
+         * */
+        person.setCar(null);
         return iPersonDao.save(person);
     }
 

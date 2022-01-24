@@ -1,6 +1,6 @@
 package nazari.sample.crud.service;
 
-import nazari.sample.crud.model.Person;
+import nazari.sample.crud.model.datamodel.Person;
 
 public interface IPersonService {
 

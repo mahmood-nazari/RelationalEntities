@@ -1,6 +1,6 @@
 package nazari.sample.crud.service;
 
-import nazari.sample.crud.model.Car;
+import nazari.sample.crud.model.datamodel.Car;
 
 public interface ICarService {
 

@@ -1,6 +1,6 @@
 package nazari.sample.crud.service.impl;
 
-import nazari.sample.crud.model.Car;
+import nazari.sample.crud.model.datamodel.Car;
 import nazari.sample.crud.repository.ICarDao;
 import nazari.sample.crud.service.ICarService;
 import org.springframework.beans.factory.annotation.Autowired;

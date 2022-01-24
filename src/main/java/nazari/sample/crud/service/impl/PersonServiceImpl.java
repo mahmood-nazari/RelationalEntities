@@ -1,6 +1,6 @@
 package nazari.sample.crud.service.impl;
 
-import nazari.sample.crud.model.Person;
+import nazari.sample.crud.model.datamodel.Person;
 import nazari.sample.crud.repository.IPersonDao;
 import nazari.sample.crud.service.IPersonService;
 import org.springframework.stereotype.Service;

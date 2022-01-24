@@ -1,7 +1,5 @@
-package nazari.sample.crud.model;
+package nazari.sample.crud.model.datamodel;
 
-
-import lombok.Data;
 
 import javax.persistence.*;
 
@@ -12,7 +10,7 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID")
+    @Column(name = "id")
     private Long id;
 
     @Column

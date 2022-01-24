@@ -1,6 +1,6 @@
 package nazari.sample.crud.controller;
 
-import nazari.sample.crud.model.Person;
+import nazari.sample.crud.model.datamodel.Person;
 import nazari.sample.crud.service.IPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

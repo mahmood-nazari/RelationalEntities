@@ -1,4 +1,4 @@
-package nazari.sample.crud.model;
+package nazari.sample.crud.model.datamodel;
 
 import javax.persistence.*;
 

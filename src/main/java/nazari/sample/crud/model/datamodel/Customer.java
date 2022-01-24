@@ -24,6 +24,7 @@ public class Customer {
     @OneToMany(mappedBy = "customer")
     private Set<CustomerBook> customerBooks;
 
+
     public Long getId() {
         return id;
     }
@@ -48,11 +49,11 @@ public class Customer {
         this.createdDate = createdDate;
     }
 
-    public Set<CustomerBook> getUserBooks() {
+    public Set<CustomerBook> getCustomerBooks() {
         return customerBooks;
     }
 
-    public void setUserBooks(Set<CustomerBook> customerBooks) {
+    public void setCustomerBooks(Set<CustomerBook> customerBooks) {
         this.customerBooks = customerBooks;
     }
 }

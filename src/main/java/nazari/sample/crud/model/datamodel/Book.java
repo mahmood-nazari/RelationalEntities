@@ -48,11 +48,11 @@ public class Book {
         this.createdDate = createdDate;
     }
 
-    public Set<CustomerBook> getUserBooks() {
+    public Set<CustomerBook> getCustomerBooks() {
         return customerBooks;
     }
 
-    public void setUserBooks(Set<CustomerBook> customerBooks) {
+    public void setCustomerBooks(Set<CustomerBook> customerBooks) {
         this.customerBooks = customerBooks;
     }
 }

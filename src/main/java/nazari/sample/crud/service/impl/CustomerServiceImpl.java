@@ -1,5 +1,6 @@
 package nazari.sample.crud.service.impl;
 
+import nazari.sample.crud.mapper.ICustomerMapper;
 import nazari.sample.crud.model.datamodel.Customer;
 import nazari.sample.crud.model.dto.CustomerDTO;
 import nazari.sample.crud.repository.ICustomerDao;
@@ -17,21 +18,22 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Override
     public Customer saveOrUpdate(CustomerDTO customerDTO) {
-        return null;
+        Customer customer = ICustomerMapper.INSTANCE.customerDTOToCustomer(customerDTO);
+        return iCustomerDao.save(customer);
     }
 
     @Override
     public CustomerDTO getById(Long id) {
-        return null;
+        return ICustomerMapper.INSTANCE.customerToCustomerDTO(iCustomerDao.findById(id).orElse(null));
     }
 
     @Override
     public List<CustomerDTO> getAllCar() {
-        return null;
+        return ICustomerMapper.INSTANCE.customerToCustomer(iCustomerDao.findAll());
     }
 
     @Override
     public void deleteById(Long id) {
-
+        iCustomerDao.deleteById(id);
     }
 }

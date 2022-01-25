@@ -3,6 +3,7 @@ package nazari.sample.crud.model.datamodel;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Set;
 
@@ -23,6 +24,11 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer")
     private Set<CustomerBook> customerBooks;
+
+    @PrePersist
+    protected void onCreate() {
+        createdDate = new Timestamp(System.currentTimeMillis());
+    }
 
 
     public Long getId() {

@@ -17,23 +17,23 @@ public interface ICustomerMapper {
     @Mapping(source = "username", target = "username")
     @Mapping(source = "customerBooks", target = "customerBookDTOS")
     @Mapping(source = "createdDate", target = "createdDate")
-    CustomerDTO bookToBookDTO(Customer customer);
+    CustomerDTO customerToCustomerDTO(Customer customer);
 
     @Mapping(source = "id", target = "id")
     @Mapping(source = "username", target = "username")
     @Mapping(source = "customerBookDTOS", target = "customerBooks")
     @Mapping(source = "createdDate", target = "createdDate")
-    Customer bookDTOToBook(CustomerDTO customerDTO);
+    Customer customerDTOToCustomer(CustomerDTO customerDTO);
 
     @Mapping(source = "id", target = "id")
     @Mapping(source = "username", target = "username")
     @Mapping(source = "customerBooks", target = "customerBookId")
     @Mapping(source = "createdDate", target = "createdDate")
-    List<CustomerDTO> bookToBookDTO(List<Customer> customers);
+    List<CustomerDTO> customerToCustomer(List<Customer> customers);
 
     @Mapping(source = "id", target = "id")
     @Mapping(source = "username", target = "username")
     @Mapping(source = "customerBookId", target = "customerBooks")
     @Mapping(source = "createdDate", target = "createdDate")
-    List<Customer> bookDTOToBook(List<CustomerDTO> customerDTOS);
+    List<Customer> customerDTOToCustomer(List<CustomerDTO> customerDTOS);
 }

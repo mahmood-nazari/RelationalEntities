@@ -1,11 +1,13 @@
 package nazari.sample.crud.model.dto;
 
+import java.util.Set;
+
 public class BookDTO {
 
     private Long id;
     private String bookName;
     private String createdDate;
-    private Long customerBookId;
+    private Set<CustomerBookDTO> customerBookDTOS;
 
     public Long getId() {
         return id;
@@ -31,11 +33,11 @@ public class BookDTO {
         this.createdDate = createdDate;
     }
 
-    public Long getCustomerBookId() {
-        return customerBookId;
+    public Set<CustomerBookDTO> getCustomerBookDTOS() {
+        return customerBookDTOS;
     }
 
-    public void setCustomerBookId(Long customerBookId) {
-        this.customerBookId = customerBookId;
+    public void setCustomerBookDTOS(Set<CustomerBookDTO> customerBookDTOS) {
+        this.customerBookDTOS = customerBookDTOS;
     }
 }

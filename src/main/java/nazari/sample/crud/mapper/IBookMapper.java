@@ -1,9 +1,7 @@
 package nazari.sample.crud.mapper;
 
 import nazari.sample.crud.model.datamodel.Book;
-import nazari.sample.crud.model.datamodel.Car;
 import nazari.sample.crud.model.dto.BookDTO;
-import nazari.sample.crud.model.dto.CarDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
@@ -14,24 +12,24 @@ import java.util.List;
 public interface IBookMapper {
     IBookMapper INSTANCE = Mappers.getMapper(IBookMapper.class);
 
-//    @Mapping(source = "id", target = "id")
-//    @Mapping(source = "bookName", target = "bookName")
-//    @Mapping(source = "", target = "customerBookId")
+    @Mapping(source = "id", target = "id")
+    @Mapping(source = "bookName", target = "bookName")
+    @Mapping(source = "customerBooks", target = "customerBookDTOS")
     BookDTO bookToBookDTO(Book book);
 
-//    @Mapping(source = "id", target = "id")
-//    @Mapping(source = "bookName", target = "bookName")
-//    @Mapping(source = "customerBookId", target = "customerBooks")
+    @Mapping(source = "id", target = "id")
+    @Mapping(source = "bookName", target = "bookName")
+    @Mapping(source = "customerBookDTOS", target = "customerBooks")
     Book bookDTOToBook(BookDTO bookDTO);
 
-//    @Mapping(source = "id", target = "id")
-//    @Mapping(source = "bookName", target = "bookName")
-//    @Mapping(source = "customerBooks", target = "customerBookId")
+    @Mapping(source = "id", target = "id")
+    @Mapping(source = "bookName", target = "bookName")
+    @Mapping(source = "customerBooks", target = "customerBookId")
     List<BookDTO> bookToBookDTO(List<Book> books);
 
-//    @Mapping(source = "id", target = "id")
-//    @Mapping(source = "bookName", target = "bookName")
-//    @Mapping(source = "customerBookId", target = "customerBooks")
+    @Mapping(source = "id", target = "id")
+    @Mapping(source = "bookName", target = "bookName")
+    @Mapping(source = "customerBookId", target = "customerBooks")
     List<Book> bookDTOToBook(List<BookDTO> bookDTOS);
 
 }

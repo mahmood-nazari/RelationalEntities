@@ -3,6 +3,7 @@ package nazari.sample.crud.model.datamodel;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
@@ -24,6 +25,11 @@ public class CustomerBook {
     @JoinColumn
     @ManyToOne
     private Book book;
+
+    @PrePersist
+    private void onCreate(){
+        createdDate =  new Timestamp(System.currentTimeMillis());
+    }
 
     public Long getId() {
         return id;

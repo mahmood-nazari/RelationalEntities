@@ -26,7 +26,7 @@ public class Customer {
     private Set<CustomerBook> customerBooks;
 
     @PrePersist
-    protected void onCreate() {
+    private void onCreate() {
         createdDate = new Timestamp(System.currentTimeMillis());
     }
 
